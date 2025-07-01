@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Face Mask Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Face Mask Detection</h1>
+      <div class="controls">
+        <button onclick="toggleStream()">Start/Stop</button>
+        <label class="switch">
+          <input type="checkbox" onchange="toggleDarkMode(this)" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Video Feed" />
+      <div class="stats">
+        <p>With Mask: <span id="mask-count">0</span></p>
+        <p>Without Mask: <span id="no-mask-count">0</span></p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
